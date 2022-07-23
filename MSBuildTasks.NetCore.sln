@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1700.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MSBuild.Community.Tasks", "MSBuild.Community.Tasks", "{4AD3590E-7003-455F-B584-4CD7DBC6A950}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{34D13B28-7CB6-4270-982A-51A5C4BD7874}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuild.Community.Tasks.NetCore", "Source\MSBuild.Community.Tasks\MSBuild.Community.Tasks.NetCore.csproj", "{F88A60A8-564C-4E70-92DC-E92DBB897641}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F88A60A8-564C-4E70-92DC-E92DBB897641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F88A60A8-564C-4E70-92DC-E92DBB897641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F88A60A8-564C-4E70-92DC-E92DBB897641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F88A60A8-564C-4E70-92DC-E92DBB897641}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CFC5BF7-8DE7-481E-8572-F401121CEF5B}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4AD3590E-7003-455F-B584-4CD7DBC6A950} = {34D13B28-7CB6-4270-982A-51A5C4BD7874}
+		{F88A60A8-564C-4E70-92DC-E92DBB897641} = {4AD3590E-7003-455F-B584-4CD7DBC6A950}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.StandardHeader = $1
+		$1.Text = @ \n ${FileName}\n \n Authors:\n      Justin Chase <justin@thebackroom.app>\n\n Copyright ©️ 2022  Justin Chase\n\n This program is free software: you can redistribute it and/or modify\n it under the terms of the GNU General Public License as published by\n the Free Software Foundation, either version 3 of the License, or\n (at your option) any later version.\n\n This program is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n GNU General Public License for more details.\n\n You should have received a copy of the GNU General Public License\n along with this program.  If not, see <http://www.gnu.org/licenses/>.
+	EndGlobalSection
+EndGlobal
