@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+	<UsingTask TaskName="ReadAllTextFromFile" TaskFactory="RoslynCodeTaskFactory" AssemblyFile="$(MSBuildBinPath)\Microsoft.Build.Tasks.Core.dll">
+		<ParameterGroup>
+			<FileName ParameterType="System.String" Required="true" />
+			<FileContents ParameterType="System.String" Output="true" />
+		</ParameterGroup>
+		<Task>
+			<Code Type="Fragment" Language="C#">
+				FileContents = System.IO.File.ReadAllText(FileName);
+			</Code>
+		</Task>
+	</UsingTask>
+	<Target Name="UseReadmeMarkdownForPackageDescription" BeforeTargets="Pack" AfterTargets="Build">
+		<ReadAllTextFromFile FileName="$(MSBuildProjectDirectory)/Readme.md">
+			<Output TaskParameter="FileContents" ItemName="ReadmeMarkdown" />
+		</ReadAllTextFromFile>
+	</Target>
+	<Target Name="UseReleaseNotesMarkdownForPackageReleaseNotes" BeforeTargets="Pack" AfterTargets="Build">
+		<ReadAllTextFromFile FileName="$(MSBuildProjectDirectory)/RELEASENOTES.md" Condition="Exists('$(MSBuildProjectDirectory)/RELEASENOTES.md')">
+			<Output TaskParameter="FileContents" ItemName="ReleaseNotesMarkdown" />
+		</ReadAllTextFromFile>
+	</Target>
+	<PropertyGroup>
+		<Description>@(ReadmeMarkdown)</Description>
+		<PackageReleaseNotes>@(ReleaseNotesMarkdown)</PackageReleaseNotes>
+	</PropertyGroup>
+</Project>

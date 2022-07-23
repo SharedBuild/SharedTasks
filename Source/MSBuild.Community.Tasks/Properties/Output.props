@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+	<PropertyGroup>
+		<IntermediateOutputPath>obj\$(Configuration)\$(TargetFramework)\$(TargetPlatform)\</IntermediateOutputPath>
+		<OutputPath>bin\$(Configuration)\$(TargetFramework)\$(TargetPlatform)\</OutputPath>
+		<DocumentationFile>$(OutputPath)</DocumentationFile>
+	</PropertyGroup>
+</Project>

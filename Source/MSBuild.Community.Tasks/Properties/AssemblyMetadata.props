@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<PropertyGroup>
+    <AssemblyName>MSBuild.Community.Tasks.NetCore</AssemblyName>
+    <AssemblyTitle>MSBuild Community Tasks for NET Core</AssemblyTitle>
+    <Description>MSBuild Community Tasks for NET Core</Description>
+</PropertyGroup>
