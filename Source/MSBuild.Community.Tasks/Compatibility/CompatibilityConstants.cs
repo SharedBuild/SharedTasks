@@ -35,4 +35,3 @@ namespace MSBuild.Community.Tasks.Compatibility
         public const string NotSupportedOnNetCore6Message = "This item is not supported on .NET core 6";
     }
 }
-

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
@@ -45,7 +45,7 @@
 		<None Remove="System.Text.RegularExpressions" />
 		<None Remove="Compatibility\" />
 		<None Remove="NAudio.Core" />
-		<None Remove="Targets\" />
+		<None Remove="XmlDocToMarkdown\" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
 		<PackageReference Include="System.Windows.Extensions" Version="6.0.0" />
@@ -55,6 +55,6 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Compatibility\" />
-		<Folder Include="Targets\" />
+		<Folder Include="XmlDocToMarkdown\" />
 	</ItemGroup>
 </Project>
