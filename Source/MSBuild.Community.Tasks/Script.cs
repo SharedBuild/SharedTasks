@@ -1,6 +1,6 @@
-#region Copyright © 2005 Paul Welter. All rights reserved.
+#region Copyright ï¿½ 2005 Paul Welter. All rights reserved.
 /*
-Copyright © 2005 Paul Welter. All rights reserved.
+Copyright ï¿½ 2005 Paul Welter. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -267,7 +267,7 @@ namespace MSBuild.Community.Tasks
 			}
 
 			/* 
-			 * TODO: if we need to change the sig of the entry point...
+			 * TODO [$62dc05d1e54435000946211b]: if we need to change the sig of the entry point...
 			if (entryParams[0].ParameterType.FullName != typeof(Project).FullName)
 			{
 				throw new Exception("The entry point has the wrong signature");

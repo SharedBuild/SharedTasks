@@ -15,7 +15,7 @@ namespace MSBuild.Community.Tasks.Tests
         public MailTest()
         {
             //
-            // TODO: Add constructor logic here
+            // TODO [$62dc05d1e544350009462112]: Add constructor logic here
             //
         }
 

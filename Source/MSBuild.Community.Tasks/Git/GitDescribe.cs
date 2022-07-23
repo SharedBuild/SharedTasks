@@ -130,7 +130,7 @@ namespace MSBuild.Community.Tasks.Git
                 // hashPosition includes the git-describe 'g' delimiter
                 var hashPosition = singleLine.Length - 40 - 1;
 
-                // TODO: get rid of these "soft" errors once unit tests are in place
+                // TODO [$62dc05d1e544350009462119]: get rid of these "soft" errors once unit tests are in place
                 try
                 {
                     if (hashPosition == -1) { 

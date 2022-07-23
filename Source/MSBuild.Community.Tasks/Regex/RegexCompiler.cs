@@ -46,7 +46,7 @@ namespace MSBuild.Community.Tasks
     /// Compiles regular expressions and saves them to disk in an assembly.
     /// </summary>
     /// <include file='AdditionalDocumentation.xml' path='docs/task[@name="RegexCompiler"]/*'/>
-    /// TODO: Figure out if we can restore the functionality in this class on NET6
+    /// TODO [$62dc05d1e54435000946211a]: Figure out if we can restore the functionality in this class on NET6
     [Obsolete(NotSupportedOnNetCore6Message, true)]
     public class RegexCompiler : Task
     {

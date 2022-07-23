@@ -68,7 +68,7 @@ namespace MSBuild.Community.Tasks
     ///     RemoteFiles="@(FilesToUpload->'%(RecursiveDir)%(Filename)%(Extension)')" />
     /// ]]></code>
     /// </example>
-    /// TODO: Figure out if we can restore the functionality in this class on NET6
+    /// TODO [$62dc05d1e544350009462117]: Figure out if we can restore the functionality in this class on NET6
     [Obsolete(NotSupportedOnNetCore6Message, true)]
     public class FtpUpload : Task, IFtpWebRequestCreator
     {
@@ -395,7 +395,7 @@ namespace MSBuild.Community.Tasks
         private bool UploadFile(string localFilePath, string remoteFilePath, bool errorOnFailure)
         {
             throw new NotSupportedException(NotSupportedOnNetCore6Message);
-            /* TODO: Figure out if we can restore the functionality below on NET6
+            /* TODO [$62dc05d1e544350009462118]: Figure out if we can restore the functionality below on NET6
             Uri uri = FtpPath(remoteFilePath);
             FileInfo localFile = new FileInfo(localFilePath);
             if (!localFile.Exists)

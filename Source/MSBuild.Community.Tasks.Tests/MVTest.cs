@@ -17,7 +17,7 @@ namespace MSBuild.Community.Tasks.Tests
         public MVTest()
         {
             //
-            // TODO: Add constructor logic here
+            // TODO [$62dc05d1e544350009462111]: Add constructor logic here
             //
         }
 
