@@ -45,7 +45,6 @@
 		<None Remove="System.Text.RegularExpressions" />
 		<None Remove="Compatibility\" />
 		<None Remove="NAudio.Core" />
-		<None Remove="Targets\" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
 		<PackageReference Include="System.Windows.Extensions" Version="6.0.0" />
@@ -55,6 +54,5 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Compatibility\" />
-		<Folder Include="Targets\" />
 	</ItemGroup>
 </Project>
