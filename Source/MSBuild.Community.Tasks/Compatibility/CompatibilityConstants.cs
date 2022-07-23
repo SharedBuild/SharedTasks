@@ -1,4 +1,4 @@
-﻿#region GitConstants.cs
+﻿#region CompatibilityConstants.cs
 /*
  * Copyright © 2022 David G. Moore, Jr. <david@dgmjr.io> 
  * All rights reserved.
@@ -27,13 +27,12 @@
  *    THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  */
 #endregion
-
-namespace MSBuild.Community.Tasks.Git
+using System;
+namespace MSBuild.Community.Tasks.Compatibility
 {
-    public static class GitConstants
+    public static class CompatibilityConstants
     {
-        public const string Git = "git";
-        public const string GetUrl = "get-url";
-        public const string Origin = "origin";
+        public const string NotSupportedOnNetCore6Message = "This item is not supported on .NET core 6";
     }
 }
+

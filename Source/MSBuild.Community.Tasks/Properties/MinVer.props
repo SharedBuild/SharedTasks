@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+	<PropertyGroup Label="MinVer Git Versioning Tool">
+		<MinVerDefaultPreReleasePhase Condition="'$(Configuration)' == 'Testing'">test</MinVerDefaultPreReleasePhase>
+		<MinVerDefaultPreReleasePhase Condition="'$(Configuration)' == 'Local'">alpha</MinVerDefaultPreReleasePhase>
+		<MinVerDefaultPreReleasePhase Condition="'$(Configuration)' == 'Release'">rc</MinVerDefaultPreReleasePhase>
+		<MinVerVerbosity>diagnostic</MinVerVerbosity>
+		<MinVerTagPrefix>v</MinVerTagPrefix>
+		<MinVerAutoIncrement>patch</MinVerAutoIncrement>
+		<MinVerMinimumMajorMinor>0.6</MinVerMinimumMajorMinor>
+		<ApplicationVersion Condition="'$(ApplicationVersion)' == ''">$(Version)</ApplicationVersion>
+		<AssemblyVersion Condition="'$(AssemblyVersion)' == ''">$(Version)</AssemblyVersion>
+	</PropertyGroup>
+</Project>

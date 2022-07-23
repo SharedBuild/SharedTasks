@@ -33,6 +33,7 @@ using System.IO;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Text.RegularExpressions;
+using static System.Text.RegularExpressions.Regex;
 using System.Xml;
 using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
@@ -45,6 +46,8 @@ namespace MSBuild.Community.Tasks
     /// Compiles regular expressions and saves them to disk in an assembly.
     /// </summary>
     /// <include file='AdditionalDocumentation.xml' path='docs/task[@name="RegexCompiler"]/*'/>
+    /// TODO: Figure out if we can restore the functionality in this class on NET6
+    [Obsolete(NotSupportedOnNetCore6Message, true)]
     public class RegexCompiler : Task
     {
         /// <summary>
@@ -161,7 +164,8 @@ namespace MSBuild.Community.Tasks
         /// </returns>
         public override bool Execute()
         {
-
+            throw new NotSupportedException(NotSupportedOnNetCore6Message);
+#if NETFRAMEWORK
             try
             {
                 Validate();
@@ -197,6 +201,7 @@ namespace MSBuild.Community.Tasks
                 Log.LogErrorFromException(ex);
                 return false;
             }
+#endif
         }
 
         private void Validate()
@@ -235,7 +240,7 @@ namespace MSBuild.Community.Tasks
             name.Name = Path.GetFileNameWithoutExtension(AssemblyName);
             name.Version = version;
 
-            if (string.IsNullOrEmpty(AssemblyKeyFile) || !File.Exists(AssemblyKeyFile)) 
+            if (string.IsNullOrEmpty(AssemblyKeyFile) || !File.Exists(AssemblyKeyFile))
                 return name;
 
             using (var fs = File.OpenRead(AssemblyKeyFile))
@@ -273,6 +278,7 @@ namespace MSBuild.Community.Tasks
             return attributes.ToArray();
         }
 
+#if NETFRAMEWORK
         private List<RegexCompilationInfo> GetRegexCompilation()
         {
             RegexOptions defaultRegexOptions = GetRegexOptions(Options);
@@ -331,7 +337,7 @@ namespace MSBuild.Community.Tasks
                 Log.LogWarning("The expressions file '{0}' does not exists.", RegularExpressionsFile.ItemSpec);
                 return null;
             }
-            Log.LogMessage(MessageImportance.Low,  "Loading expressions file '{0}'.", RegularExpressionsFile.ItemSpec);
+            Log.LogMessage(MessageImportance.Low, "Loading expressions file '{0}'.", RegularExpressionsFile.ItemSpec);
 
             using (FileStream fs = File.OpenRead(RegularExpressionsFile.ItemSpec))
             using (XmlReader reader = XmlReader.Create(fs))
@@ -401,6 +407,7 @@ namespace MSBuild.Community.Tasks
 
             return regexList;
         }
+#endif
 
         private RegexOptions GetRegexOptions(string options)
         {

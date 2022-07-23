@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project>
-	<PropertyGroup>
-		<IntermediateOutputPath>obj\$(Configuration)\$(TargetFramework)\$(TargetPlatform)</IntermediateOutputPath>
-		<OutputPath>bin\$(Configuration)\$(TargetFramework)\$(TargetPlatform)</OutputPath>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|AnyCPU' ">
+		<DebugType>Full</DebugType>
+		<Optimize>false</Optimize>
+		<DefineConstants>TESTING;TEST;DEBUG;</DefineConstants>
+		<NoWarn />
+		<NoStdLib>false</NoStdLib>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<DebugSymbols>true</DebugSymbols>

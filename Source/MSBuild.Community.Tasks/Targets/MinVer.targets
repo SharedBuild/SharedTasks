@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+	<PropertyGroup>
+		<MinVer_targets>imported</MinVer_targets>
+	</PropertyGroup>
+	<Target Name="MinVerAssemblyPropertiesSetter" BeforeTargets="GenerateAssemblyInfo" AfterTargets="MinVer">
+		<ItemGroup Label="Assembly GitVersion Metadata">
+			<AssemblyMetadata Include="MinVerVersion" Value="$(MinVerVersion)" />
+			<AssemblyMetadata Include="MinVerMajor" Value="$(MinVerMajor)" />
+			<AssemblyMetadata Include="MinVerMinor" Value="$(MinVerMinor)" />
+			<AssemblyMetadata Include="MinVerPatch" Value="$(MinVerPatch)" />
+			<AssemblyMetadata Include="MinVerPreRelease" Value="$(MinVerPreRelease)" />
+			<AssemblyMetadata Include="MinVerBuildMetadata" Value="$(MinVerBuildMetadata)" />
+			<AssemblyMetadata Include="Version" Value="$(Version)" />
+			<AssemblyMetadata Include="PackageVersion" Value="$(PackageVersion)" />
+		</ItemGroup>
+	</Target>
+</Project>

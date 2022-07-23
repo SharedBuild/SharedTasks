@@ -1,4 +1,4 @@
-﻿#region GitConstants.cs
+﻿#region Usings.cs
 /*
  * Copyright © 2022 David G. Moore, Jr. <david@dgmjr.io> 
  * All rights reserved.
@@ -27,13 +27,5 @@
  *    THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  */
 #endregion
-
-namespace MSBuild.Community.Tasks.Git
-{
-    public static class GitConstants
-    {
-        public const string Git = "git";
-        public const string GetUrl = "get-url";
-        public const string Origin = "origin";
-    }
-}
+global using System;
+global using static MSBuild.Community.Tasks.Compatibility.CompatibilityConstants;

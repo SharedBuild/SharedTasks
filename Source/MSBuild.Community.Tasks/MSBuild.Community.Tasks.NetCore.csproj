@@ -7,11 +7,15 @@
 		<ProjectGuid>{F88A60A8-564C-4E70-92DC-E92DBB897641}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<LangVersion>preview</LangVersion>
 		<TargetFrameworks>net6.0;netcoreapp3.1;netstandard2.1;netstandard2.0;</TargetFrameworks>
+		<Configurations>Test;Debug;Release</Configurations>
+		<RootNamespace>MSBuild.Community.Tasks</RootNamespace>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="DotNetZip" Version="1.10.1.0" />
-		<PackageReference Include="FSharp.Compiler.CodeDom" Version="1.0.0.1" />
+		<!--		<PackageReference Include="DotNetZip" Version="1.10.1.0" />
+		<PackageReference Include="FSharp.Compiler.CodeDom" Version="1.0.0.1" />-->
 		<PackageReference Include="Microsoft.Build.Framework" Version="[17.2.0,)" />
 		<PackageReference Include="Microsoft.Build.Utilities.Core" Version="[17.2.0,)" />
 		<!--<Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />-->
@@ -26,11 +30,31 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
+		<PackageReference Include="System.DirectoryServices" Version="6.0.0" />
+		<PackageReference Include="NAudio" Version="2.1.0" />
+		<PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
+		<PackageReference Include="NAudio.Core" Version="2.1.0" />
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Remove="Properties\AssemblyInfo.cs" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Remove="MinVer" />
+		<None Remove="System.DirectoryServices" />
+		<None Remove="NAudio" />
+		<None Remove="System.Text.RegularExpressions" />
+		<None Remove="Compatibility\" />
+		<None Remove="NAudio.Core" />
+		<None Remove="Targets\" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+		<PackageReference Include="System.Windows.Extensions" Version="6.0.0" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+		<PackageReference Include="System.Windows.Extensions" Version="6.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Compatibility\" />
+		<Folder Include="Targets\" />
 	</ItemGroup>
 </Project>

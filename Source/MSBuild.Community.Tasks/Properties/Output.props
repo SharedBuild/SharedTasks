@@ -3,6 +3,7 @@
 	<PropertyGroup>
 		<IntermediateOutputPath>obj\$(Configuration)\$(TargetFramework)\$(TargetPlatform)\</IntermediateOutputPath>
 		<OutputPath>bin\$(Configuration)\$(TargetFramework)\$(TargetPlatform)\</OutputPath>
-		<DocumentationFile>$(OutputPath)</DocumentationFile>
+		<DocumentationFile Condition="'$(DocumentationFile)' == ''">$(OutputPath)</DocumentationFile>
+		<PackageOutputPath Condition="'$(PackageOutputPath)' == ''">$(ArtifactOutputPath)</PackageOutputPath>
 	</PropertyGroup>
 </Project>
